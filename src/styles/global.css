@@ -2,10 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-.title {
+/* .title {
   @apply text-5xl font-bold text-violet-500;
-}
+} */
 
 body {
   @apply bg-zinc-600 text-zinc-100;
+}
+
+#personal-notes {
+  @apply my-10 border p-2 w-3/6 mx-auto;
+}
+
+.notes {
+  @apply border p-5 my-3;
 }
