@@ -1,5 +1,7 @@
+import { Logo } from "../components/Logo";
+
 export function Event() {
   return (
-    <h1>Event</h1>
+    <Logo />
   )
 }
