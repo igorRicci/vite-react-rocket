@@ -1,7 +1,9 @@
 export function Video() {
   return (
     <div className="flex-1">
-      Video
+      <div className="bg-black ">
+        <div className="h-full w-full max-w-[110px] max-h-[60vh] aspect-video"></div>
+      </div>
     </div>
   )
 }
