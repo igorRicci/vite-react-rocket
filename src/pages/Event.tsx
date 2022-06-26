@@ -1,7 +1,7 @@
-import { Logo } from "../components/Logo";
+import { Header } from "../components/Header";
 
 export function Event() {
   return (
-    <Logo />
+    <Header />
   )
 }
