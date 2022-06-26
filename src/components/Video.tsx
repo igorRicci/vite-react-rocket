@@ -1,4 +1,4 @@
-import { GithubLogo, LinkedinLogo } from "phosphor-react";
+import { CaretRight, FileArrowDown, GithubLogo, LinkedinLogo } from "phosphor-react";
 
 export function Video() {
   return (
@@ -44,8 +44,41 @@ export function Video() {
             </a>
           </div>
         </div>
-        <div>
 
+        <div className="gap-8 mt-20 grid grid-cols-2">
+          <a href="#" className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors">
+            <div className="bg-green-700 h-full p-6 flex items-center">
+              <FileArrowDown size={40} />
+            </div>
+
+            <div className="py-6 leading-relaxed">
+              <strong className="text-2xl">Extra secret materials</strong>
+              <p className="text-sm text-gray-200 mt-2">
+                Everything that cannot be said out loud is here.
+              </p>
+            </div>
+
+            <div className="h-full p-6 flex items-center">
+              <CaretRight size={24} />
+            </div>
+          </a>
+
+          <a href="#" className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors">
+            <div className="bg-green-700 h-full p-6 flex items-center">
+              <FileArrowDown size={40} />
+            </div>
+
+            <div className="py-6 leading-relaxed">
+              <strong className="text-2xl">Old German books</strong>
+              <p className="text-sm text-gray-200 mt-2">
+                Storytelling books that German parents used to read for their children
+              </p>
+            </div>
+
+            <div className="h-full p-6 flex items-center">
+              <CaretRight size={24} />
+            </div>
+          </a>
         </div>
       </div>
     </div>
