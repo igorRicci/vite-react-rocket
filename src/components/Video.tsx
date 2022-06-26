@@ -4,7 +4,7 @@ import { CaretRight, FileArrowDown, GithubLogo, LinkedinLogo } from "phosphor-re
 
 import '@vime/core/themes/default.css';
 
-const GET_LESSON_BY_SLUG = gql`
+const GET_LESSON_BY_SLUG_QUERY = gql`
   query GetLessonBySlug ($slug: String) {
     lesson(where: {slug: $slug}) {
       title
@@ -37,21 +37,26 @@ interface VideoProps {
 }
 
 export function Video(props: VideoProps) {
-  const { data } = useQuery(GET_LESSON_BY_SLUG, {
+  const { data } = useQuery<GetLessonBySlugResponse>(GET_LESSON_BY_SLUG_QUERY, {
     variables: {
       slug: props.lessonSlug,
     }
   })
 
-  console.log(data);
+  console.log(data?.lesson.videoId);
 
+  if (!data) {
+    <div className="flex-1">
+      <p>Loading...</p>
+    </div>
+  }
 
   return (
     <div className="flex-1">
       <div className="bg-black flex justify-center">
         <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
           <Player>
-            <Youtube videoId="pkb2B6OCIY4" />
+            <Youtube videoId={data.lesson.videoId} key={data.lesson.videoId}/>
             <DefaultUi />
           </Player>
         </div>
@@ -61,23 +66,23 @@ export function Video(props: VideoProps) {
         <div className="flex items-start gap-16">
           <div className="flex-1">
             <h1 className="text-2xl font-bold">
-              Traditional German with Dwight K. Schrute
+              {data.lesson.title}
             </h1>
 
             <p className="mt-4 text-gray-200 leading-relaxed">
-              The most traditional German you can find in the US. You'll learn every ancient word everyone has forgotten about.
+              {data.lesson.description}
             </p>
 
             <div className="flex items-center gap-4 mt-6">
               <img
                 className="h-16 w-16 rounded-full border-2 border-blue-500"
-                src="https://pbs.twimg.com/profile_images/1212841876895813632/4mzarqqS_400x400.jpg"
+                src={data.lesson.teacher.avatarURL}
                 alt="Github profile pic"
               />
 
               <div className="leading-relaxed">
-                <strong className="text-2xl font-bold block">Dwight K. Schrute</strong>
-                <span className="text-gray-200 text-sm block">Assistent to the Regional Manager</span>
+                <strong className="text-2xl font-bold block">{data.lesson.teacher.name}</strong>
+                <span className="text-gray-200 text-sm block">{data.lesson.teacher.bio}</span>
               </div>
             </div>
           </div>
