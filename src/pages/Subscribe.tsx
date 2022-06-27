@@ -17,7 +17,9 @@ export function Subscribe() {
   const [createSubscriber] = useMutation(CREATE_SUBSCRIBER_MUTATION)
 
   function handleSubscribe(event: FormEvent) {
-     event?.preventDefault()
+     event.preventDefault();
+
+    console.log(name, email)
 
      createSubscriber({
       variables: {
