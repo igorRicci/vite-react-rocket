@@ -14,7 +14,7 @@ export function Subscribe() {
           </h1>
 
           <p className="mt-4 text-gray-200 leading-relaxed">
-            In 3 days you'll be able to gather practical skills using one of the most famous technologies in the market.
+            In 3 days you'll be able to gather practical skills using one of the most famous technologies in the market. For free.
           </p>
         </div>
 
@@ -33,6 +33,13 @@ export function Subscribe() {
                 type="email"
                 placeholder="Email"
                 />
+
+              <button
+                type="submit"
+                className="mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700 transition-colors"
+              >
+                Sign up
+              </button>
             </form>
           </div>
         </div>
