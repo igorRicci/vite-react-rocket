@@ -79,7 +79,7 @@ export function Video(props: VideoProps) {
               <img
                 className="h-16 w-16 rounded-full border-2 border-blue-500"
                 src={data?.lesson.teacher.avatarURL}
-                alt="Github profile pic"
+                alt="profile pic"
               />
 
               <div className="leading-relaxed">
