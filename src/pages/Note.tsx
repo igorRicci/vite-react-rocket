@@ -33,6 +33,19 @@ export function Note() {
         <p>Torna um componente variável, <strong>condicional a alguma informação</strong></p>
         <p>Isso é feito utilizando propriedades. Modificam o comportamento eou visual de um componente baseado em alguma info</p>
       </div>
+
+      <div className="notes">
+        <h2 className="border-b">Estado</h2>
+
+        <p>Uma variável que toda vez que mudamos ela, o componente reflete ela visualmente</p>
+        <p>O React vai refletir o novo valor na tela</p>
+      </div>
+
+      <div className="notes">
+        <h2 className="border-b">Imutabilidade</h2>
+
+        <p>Não vai alterar diretamente o valor da variável, mas chamar uma função para criar um novo valor para a var</p>
+      </div>
     </div>
   )
 }
