@@ -1,5 +1,7 @@
 export function Subscribe() {
   return (
-    <h1>Subscribe</h1>
+    <div className="min-h-screen">
+      
+    </div>
   )
 }
