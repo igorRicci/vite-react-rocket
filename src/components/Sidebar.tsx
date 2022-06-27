@@ -12,6 +12,7 @@ const GET_LESSONS_QUERY = gql`
     }
   }
 `
+
 interface GetLessonsQueryResponse {
   lessons: {
     id: string
