@@ -22,7 +22,7 @@ const GET_LESSON_BY_SLUG_QUERY = gql`
 interface GetLessonBySlugResponse {
   lesson: {
     title: string;
-    videoId: string;
+    videoId: string; 
     description: string;
     teacher: {
       bio: string;
