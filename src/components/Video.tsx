@@ -24,13 +24,12 @@ export function Video(props: VideoProps) {
     </div>
   }
 
-
   return (
     <div className="flex-1">
       <div className="bg-black flex justify-center">
         <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
           <Player>
-            <Youtube videoId={data?.lesson.videoId} key={data?.lesson.videoId} />
+            <Youtube videoId={data?.lesson?.videoId} key={data?.lesson?.videoId} />
             <DefaultUi />
           </Player>
         </div>
@@ -40,14 +39,14 @@ export function Video(props: VideoProps) {
         <div className="flex items-start gap-16">
           <div className="flex-1">
             <h1 className="text-2xl font-bold">
-              {data?.lesson.title}
+              {data?.lesson?.title}
             </h1>
 
             <p className="mt-4 text-gray-200 leading-relaxed">
-              {data?.lesson.description}
+              {data?.lesson?.description}
             </p>
 
-            {data?.lesson.teacher && (
+            {data?.lesson?.teacher && (
               <div className="flex items-center gap-4 mt-6">
                 <img
                   className="h-16 w-16 rounded-full border-2 border-blue-500"
