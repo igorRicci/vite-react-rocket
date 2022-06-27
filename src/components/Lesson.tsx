@@ -31,7 +31,9 @@ export function Lesson(props: LessonProps) {
       >
         <header className="flex items-center justify-between">
           {isLessonAvailable ? (
-            <span className="text-sm text-blue-500 font-medium flex items-center gap-2">
+            <span className={classNames('text-sm text-white font-medium flex items-center gap-2', {
+              'text-blue-500': isActiveLesson,
+            })}>
             <CheckCircle size={20} />
             Check content
           </span>
@@ -42,12 +44,16 @@ export function Lesson(props: LessonProps) {
           </span>
           )}
 
-          <span className="text-xs rounded py-[0.125rem] px-2 border border-green-300 text-white font-bold">
+          <span className={classNames('text-xs rounded py-[0.125rem] px-2 border border-green-300 text-white font-bold', {
+            'border-white': isActiveLesson,
+          })}>
             {props.type === 'live' ? 'LIVE' : 'VIDEO CLASS'}
           </span>
         </header>
 
-        <strong className="text-gray-200 mt-5 block">
+        <strong className={classNames('mt-5 block text-white', {
+          'text-gray-200': !isActiveLesson,
+        })}>
           {props.title}
         </strong>
       </div>
